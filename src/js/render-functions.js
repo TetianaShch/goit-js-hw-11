@@ -32,7 +32,7 @@ export function createGallery(images) {
   }) => `
       <li class="card">
       <a href="${largeImageURL}">
-        <img src="${webformatURL}" alt="${escapeHtml(tags)}" loading="lazy"/>
+        <img src="${webformatURL}" alt="${tags}" loading="lazy"/>
       </a>
       <div class="meta">
         <span>❤ Likes: <b>${likes}</b></span>
@@ -61,11 +61,3 @@ export function hideLoader() {
   loaderEl.setAttribute('aria-hidden', 'true');
 }
 
-function escapeHtml(str = '') {
-  return String(str)
-    .replaceAll('&', '&amp;')
-    .replaceAll('<', '&lt;')
-    .replaceAll('>', '&gt;')
-    .replaceAll('"', '&quot;')
-    .replaceAll("'", '&#39;');
-}
